@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plansza module &mdash; Projekt Backgammon 1.008 - dokumentacja</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+    <link rel="next" title="Pole module" href="Pole.html" />
+    <link rel="prev" title="Pionek module" href="Pionek.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Projekt Backgammon
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Szukaj" aria-label="Szukaj" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Ogólne informacje:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wstep.html">WSTĘP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spis treści:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projekt_backgammon</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Bot.html">Bot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domek.html">Domek module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gracz.html">Gracz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kostka.html">Kostka module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pionek.html">Pionek module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Plansza module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Plansza.Plansza"><code class="docutils literal notranslate"><span class="pre">Plansza</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.dod_pionka_do_bandy"><code class="docutils literal notranslate"><span class="pre">Plansza.dod_pionka_do_bandy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.podaj_bande"><code class="docutils literal notranslate"><span class="pre">Plansza.podaj_bande()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.podaj_domek"><code class="docutils literal notranslate"><span class="pre">Plansza.podaj_domek()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.podaj_pola"><code class="docutils literal notranslate"><span class="pre">Plansza.podaj_pola()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.podaj_pole"><code class="docutils literal notranslate"><span class="pre">Plansza.podaj_pole()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.podaj_zdjete_z_planszy"><code class="docutils literal notranslate"><span class="pre">Plansza.podaj_zdjete_z_planszy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.stan_bandy"><code class="docutils literal notranslate"><span class="pre">Plansza.stan_bandy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.stan_planszy"><code class="docutils literal notranslate"><span class="pre">Plansza.stan_planszy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.wez_pionka_z_bandy"><code class="docutils literal notranslate"><span class="pre">Plansza.wez_pionka_z_bandy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Plansza.Plansza.zdejmij_pionka_z_planszy"><code class="docutils literal notranslate"><span class="pre">Plansza.zdejmij_pionka_z_planszy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Pole.html">Pole module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PrzebiegGry.html">PrzebiegGry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uzytkownik.html">Uzytkownik module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Projekt Backgammon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">projekt_backgammon</a></li>
+      <li class="breadcrumb-item active">Plansza module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Plansza.rst.txt" rel="nofollow"> Zobacz źródło strony</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Plansza">
+<span id="plansza-module"></span><h1>Plansza module<a class="headerlink" href="#module-Plansza" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Plansza.Plansza">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Plansza.</span></span><span class="sig-name descname"><span class="pre">Plansza</span></span><a class="headerlink" href="#Plansza.Plansza" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa reprezentująca planszę do gry.</p>
+<dl>
+<dt>Atrybuty klasy:</dt><dd><p>-pola: parametr typu dict przechowujący pola znajdujące sie na planszy</p>
+<p>-domki: parametr typu dict przechowujący domki każdego koloru pionków</p>
+<p>-banda: parametr typu dict przechowujący stan bandy dla poszczególnego koloru pionków</p>
+<p>-zdjete_z_planszy: parametr typu dict przechowujący zdjęte z planszy pionki dla każdego koloru</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.dod_pionka_do_bandy">
+<span class="sig-name descname"><span class="pre">dod_pionka_do_bandy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_pola</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.dod_pionka_do_bandy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Dodaje pionka do bandy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nr_pola</strong> (<em>int</em>) – Numer pola, z którego ma być zdejmowany pionek.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.podaj_bande">
+<span class="sig-name descname"><span class="pre">podaj_bande</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.podaj_bande" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca bandę o podanym kolorze.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kolor</strong> (<em>str</em>) – Kolor bandy („czarny” lub „czerwony”).</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>Banda o podanym kolorze.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list(Lista, której elementami są obiekty klasy Pionek.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.podaj_domek">
+<span class="sig-name descname"><span class="pre">podaj_domek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.podaj_domek" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca domek o podanym kolorze.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kolor</strong> (<em>str</em>) – Kolor domku („czarny” lub „czerwony”).</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>Domek o podanym kolorze.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="Domek.html#Domek.Domek" title="Domek.Domek">Domek</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.podaj_pola">
+<span class="sig-name descname"><span class="pre">podaj_pola</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.podaj_pola" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca wszystkie pola planszy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pola planszy.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict(Słownik, którego kluczami są obiekty typu int, zaś wartości to obiekty klasy Pole.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.podaj_pole">
+<span class="sig-name descname"><span class="pre">podaj_pole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_pola</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.podaj_pole" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca pole o podanym numerze.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nr_pola</strong> (<em>int</em>) – Numer pola.</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>Pole o podanym numerze.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="Pole.html#Pole.Pole" title="Pole.Pole">Pole</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.podaj_zdjete_z_planszy">
+<span class="sig-name descname"><span class="pre">podaj_zdjete_z_planszy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.podaj_zdjete_z_planszy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca zdejmowane pionki z planszy o podanym kolorze.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>kolor</strong> (<em>str</em>) – Kolor pionków („czarny” lub „czerwony”).</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>Zdjęte pionki z planszy o podanym kolorze.</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p>set(Zbiór, którego elementami są obiekty klasy Pionek.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.stan_bandy">
+<span class="sig-name descname"><span class="pre">stan_bandy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.stan_bandy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca stan bandy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Stan bandy.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict(Słownik, którego kluczami są obiekty typu str(„czarny” lub „czerwony”), zaś kluczami są obiekty typu int.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.stan_planszy">
+<span class="sig-name descname"><span class="pre">stan_planszy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.stan_planszy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wyświetla stan planszy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.wez_pionka_z_bandy">
+<span class="sig-name descname"><span class="pre">wez_pionka_z_bandy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_pola</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.wez_pionka_z_bandy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zdejmuje pionka z bandy i umieszcza na polu o podanym numerze.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nr_pola</strong> (<em>int</em>) – Numer pola, na którym ma być umieszczony pionek.</p></li>
+<li><p><strong>kolor</strong> (<em>str</em>) – Kolor pionka, który ma być zdjęty z bandy („czarny” lub „czerwony”).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Plansza.Plansza.zdejmij_pionka_z_planszy">
+<span class="sig-name descname"><span class="pre">zdejmij_pionka_z_planszy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nr_pola</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Plansza.Plansza.zdejmij_pionka_z_planszy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zdejmuje pionka z planszy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nr_pola</strong> (<em>int</em>) – Numer pola, z którego ma być zdejmowany pionek.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Pionek.html" class="btn btn-neutral float-left" title="Pionek module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Poprzedni</a>
+        <a href="Pole.html" class="btn btn-neutral float-right" title="Pole module" accesskey="n" rel="next">Następny <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Klaudia Bała.</p>
+  </div>
+
+  Zbudowano w <a href="https://www.sphinx-doc.org/">Sphinx</a> używając
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    dostarczone przez <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracz module &mdash; Projekt Backgammon 1.008 - dokumentacja</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+    <link rel="next" title="Kostka module" href="Kostka.html" />
+    <link rel="prev" title="Domek module" href="Domek.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Projekt Backgammon
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Szukaj" aria-label="Szukaj" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Ogólne informacje:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wstep.html">WSTĘP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spis treści:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projekt_backgammon</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Bot.html">Bot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domek.html">Domek module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gracz module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Gracz.Gracz"><code class="docutils literal notranslate"><span class="pre">Gracz</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.dodaj_plansze"><code class="docutils literal notranslate"><span class="pre">Gracz.dodaj_plansze()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_dostepne_pola"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_dostepne_pola()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_kierunek_ruchu"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_kierunek_ruchu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_kolor"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_kolor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_kolor_przeciwnika"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_kolor_przeciwnika()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_lst_pionkow"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_lst_pionkow()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_mozliwosci_ruchu"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_mozliwosci_ruchu()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_nazwe"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_nazwe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_nr_bandy"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_nr_bandy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_pola_z_pionkami"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_pola_z_pionkami()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_pola_z_pionkami_do_zbicia"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_pola_z_pionkami_do_zbicia()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Gracz.Gracz.podaj_wsp_chodzenia"><code class="docutils literal notranslate"><span class="pre">Gracz.podaj_wsp_chodzenia()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Kostka.html">Kostka module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pionek.html">Pionek module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Plansza.html">Plansza module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pole.html">Pole module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PrzebiegGry.html">PrzebiegGry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uzytkownik.html">Uzytkownik module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Projekt Backgammon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">projekt_backgammon</a></li>
+      <li class="breadcrumb-item active">Gracz module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Gracz.rst.txt" rel="nofollow"> Zobacz źródło strony</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Gracz">
+<span id="gracz-module"></span><h1>Gracz module<a class="headerlink" href="#module-Gracz" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Gracz.Gracz">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Gracz.</span></span><span class="sig-name descname"><span class="pre">Gracz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nazwa_gracza</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa reprezentująca gracza.</p>
+<dl>
+<dt>Atrybuty klasy:</dt><dd><p>-nazwa: parametr typu str, przechowujący informacje, o nicku gracza</p>
+<p>-kolor: parametr typu str, przechowujący informacje, jakim kolorem będzie grał gracz</p>
+<p>-lst_pionkow: parametr typu list, przechowujący listę pionków przypisanych do gracza</p>
+<p>-plansza: parametr typu Plansza, przechowujący planszę, na której odbędzie się gra</p>
+<p>-nr_bandy: parametr typu int, który mówi, jako które pole możemy traktować bandę w zależności od koloru</p>
+<p>-wsp_chodzenia: parametr typu int, który mówi, w jakim kierunku gracz przemieszcza się po planszy pionkami</p>
+<p>-dostepne_pola: parametr typu dict, przechowujący pola, na które gracz może przemieścić pionka</p>
+<p>-pola_z_pionkami: parametr typu dict, przechowujący pola, na których są pionki gracza</p>
+<p>-pola_z_pionkami_do_zbicia: parametr typu dict, przechowujący pola, na których znajdują się pionki przeciwnego gracza, które można zbić</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.dodaj_plansze">
+<span class="sig-name descname"><span class="pre">dodaj_plansze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plansza</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.dodaj_plansze" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Dodaje planszę do gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plansza</strong> (<a class="reference internal" href="Plansza.html#Plansza.Plansza" title="Plansza.Plansza"><em>Plansza</em></a>) – Plansza do dodania.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_dostepne_pola">
+<span class="sig-name descname"><span class="pre">podaj_dostepne_pola</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_dostepne_pola" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca dostępne pola dla gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dostępne pola dla gracza.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict(Słownik, którego kluczami są obiekty typu int, zaś wartości to obiekty klasy Pole.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_kierunek_ruchu">
+<span class="sig-name descname"><span class="pre">podaj_kierunek_ruchu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_kierunek_ruchu" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Wyświetla kierunek ruchu pionków gracza.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_kolor">
+<span class="sig-name descname"><span class="pre">podaj_kolor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_kolor" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca kolor gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Kolor gracza („czarny” lub „czerwony).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_kolor_przeciwnika">
+<span class="sig-name descname"><span class="pre">podaj_kolor_przeciwnika</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_kolor_przeciwnika" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca kolor przeciwnika.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Kolor przeciwnika („czarny” lub „czerwony).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_lst_pionkow">
+<span class="sig-name descname"><span class="pre">podaj_lst_pionkow</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_lst_pionkow" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca listę pionków gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Lista pionków gracza.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>list(Lista, której elementami są obiekty klasy Pionek)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_mozliwosci_ruchu">
+<span class="sig-name descname"><span class="pre">podaj_mozliwosci_ruchu</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_mozliwosci_ruchu" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Aktualizuje dostępne pola, pola z pionkami oraz pola z pionkami do zbicia dla gracza.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_nazwe">
+<span class="sig-name descname"><span class="pre">podaj_nazwe</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_nazwe" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca nazwę gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nazwa gracza.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_nr_bandy">
+<span class="sig-name descname"><span class="pre">podaj_nr_bandy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_nr_bandy" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca numer pola, reprezentującego bandę gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Numer pola bandy gracza (0 lub 25).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_pola_z_pionkami">
+<span class="sig-name descname"><span class="pre">podaj_pola_z_pionkami</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_pola_z_pionkami" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca pola z pionkami gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pola z pionkami gracza.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict(Słownik, którego kluczami są obiekty typu int, zaś wartości to obiekty klasy Pole.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_pola_z_pionkami_do_zbicia">
+<span class="sig-name descname"><span class="pre">podaj_pola_z_pionkami_do_zbicia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_pola_z_pionkami_do_zbicia" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca pola z pionkami przeciwnika, które mogą być zbite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Pola z pionkami gracza.</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict(Słownik, którego kluczami są obiekty typu int, zaś wartości to obiekty klasy Pole.)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Gracz.Gracz.podaj_wsp_chodzenia">
+<span class="sig-name descname"><span class="pre">podaj_wsp_chodzenia</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Gracz.Gracz.podaj_wsp_chodzenia" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca współczynnik chodzenia pionków gracza.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Współczynnik chodzenia pionków gracza (1 lub -1).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Domek.html" class="btn btn-neutral float-left" title="Domek module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Poprzedni</a>
+        <a href="Kostka.html" class="btn btn-neutral float-right" title="Kostka module" accesskey="n" rel="next">Następny <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Klaudia Bała.</p>
+  </div>
+
+  Zbudowano w <a href="https://www.sphinx-doc.org/">Sphinx</a> używając
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    dostarczone przez <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pl" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pionek module &mdash; Projekt Backgammon 1.008 - dokumentacja</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Indeks" href="genindex.html" />
+    <link rel="search" title="Szukaj" href="search.html" />
+    <link rel="next" title="Plansza module" href="Plansza.html" />
+    <link rel="prev" title="Kostka module" href="Kostka.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Projekt Backgammon
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Szukaj" aria-label="Szukaj" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Ogólne informacje:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wstep.html">WSTĘP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spis treści:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">projekt_backgammon</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Bot.html">Bot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domek.html">Domek module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gracz.html">Gracz module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Kostka.html">Kostka module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Pionek module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Pionek.Pionek"><code class="docutils literal notranslate"><span class="pre">Pionek</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Pionek.Pionek.gdzie"><code class="docutils literal notranslate"><span class="pre">Pionek.gdzie()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Pionek.Pionek.podaj_kolor"><code class="docutils literal notranslate"><span class="pre">Pionek.podaj_kolor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Pionek.Pionek.zmien_pozycje"><code class="docutils literal notranslate"><span class="pre">Pionek.zmien_pozycje()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Plansza.html">Plansza module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pole.html">Pole module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PrzebiegGry.html">PrzebiegGry module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Uzytkownik.html">Uzytkownik module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Projekt Backgammon</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">projekt_backgammon</a></li>
+      <li class="breadcrumb-item active">Pionek module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Pionek.rst.txt" rel="nofollow"> Zobacz źródło strony</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-Pionek">
+<span id="pionek-module"></span><h1>Pionek module<a class="headerlink" href="#module-Pionek" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Pionek.Pionek">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Pionek.</span></span><span class="sig-name descname"><span class="pre">Pionek</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kolor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Pionek.Pionek" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Klasy bazowe: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Klasa reprezentująca pionka do gry.</p>
+<dl>
+<dt>Atrybuty klasy:</dt><dd><p>-pozycja: parametr typu NoneType, Pole lub str(„zdjęty”, „banda”), który mówi, gdzie aktualnie znajduje się pionek</p>
+<p>-kolor: parametr typu str, który mówi, jakiego koloru jest pionek do gry (czarny lub czerwony)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Pionek.Pionek.gdzie">
+<span class="sig-name descname"><span class="pre">gdzie</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Pionek.Pionek.gdzie" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca aktualną pozycję pionka.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Aktualna pozycja pionka (pole, None,”zdjęty” lub „banda”).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="Pole.html#Pole.Pole" title="Pole.Pole">Pole</a>, NoneType lub str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Pionek.Pionek.podaj_kolor">
+<span class="sig-name descname"><span class="pre">podaj_kolor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Pionek.Pionek.podaj_kolor" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zwraca kolor pionka.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Zwraca<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Kolor pionka („czarny” lub „czerwony”).</p>
+</dd>
+<dt class="field-even">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Pionek.Pionek.zmien_pozycje">
+<span class="sig-name descname"><span class="pre">zmien_pozycje</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nowa_poz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Pionek.Pionek.zmien_pozycje" title="Stały odnośnik do tej definicji"></a></dt>
+<dd><p>Zmienia pozycję pionka na podane pole.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parametry<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nowa_poz</strong> (<em>Pole lub str</em>) – Nowa pozycja pionka (pole,”zdjęty” lub „banda”).</p>
+</dd>
+<dt class="field-even">Zwraca<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Typ zwracany<span class="colon">:</span></dt>
+<dd class="field-odd"><p>NoneType</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Kostka.html" class="btn btn-neutral float-left" title="Kostka module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Poprzedni</a>
+        <a href="Plansza.html" class="btn btn-neutral float-right" title="Plansza module" accesskey="n" rel="next">Następny <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Klaudia Bała.</p>
+  </div>
+
+  Zbudowano w <a href="https://www.sphinx-doc.org/">Sphinx</a> używając
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    dostarczone przez <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
